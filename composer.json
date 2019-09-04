@@ -1,0 +1,33 @@
+{
+  "name": "onnerby/doerender",
+  "description": "A simple nested view pattern",
+  "keywords": [
+    "PHP",
+    "Render",
+    "view"
+  ],
+  "homepage": "https://github.com/onnerby/doerender",
+  "type": "library",
+  "license": "LGPL-2.1-or-later",
+  "authors": [
+    {
+      "name": "Daniel Önnerby"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+    	"Doe\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Doe\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8"
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox tests"
+  }
+}
