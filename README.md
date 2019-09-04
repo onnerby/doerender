@@ -10,7 +10,8 @@ composer require onnerby/doerender
 
 ### Basic example
 ```php
-$renderer = \Doe\Render::createNestedView(__DIR__ . '/views/')
+\Doe\Render::$basePath = __DIR__ . '/views/';
+$renderer = \Doe\Render::createNestedView()
 	->add('layout.php', ['title' => 'Default title']);
 
 $renderer->add('embed_view.php', ['viewdata' => 'Stuff']);
@@ -47,7 +48,8 @@ will produce
 
 ### Advanced example
 ```php
-$renderer = \Doe\Render::createNestedView(__DIR__ . '/views/')
+\Doe\Render::$basePath = __DIR__ . '/views/';
+$renderer = \Doe\Render::createNestedView()
 	->add('layout.php', ['title' => 'Default title']);
 
 // If you can't access the renderer, we have a helper
