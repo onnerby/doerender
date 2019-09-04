@@ -3,6 +3,11 @@ A simple nested view pattern
 
 ## Doe\Render
 
+## Installation
+```
+composer require onnerby/doerender
+```
+
 ### Basic example
 ```php
 $renderer = \Doe\Render::createNestedView(__DIR__ . '/views/')
