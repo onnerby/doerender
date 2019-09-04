@@ -9,9 +9,10 @@ use PHPUnit\Framework\TestCase;
 final class RenderTest extends TestCase
 {
 
-	public function testCreateRouter(): void
+	public function testCreateRenderer(): void
 	{
-		$renderer = \Doe\Render::createNestedView(__DIR__ . '/views/');
+		\Doe\Render::$basePath = __DIR__ . '/views/';
+		$renderer = \Doe\Render::createNestedView();
 		$this->assertIsObject(
 			$renderer
 		);
@@ -19,7 +20,8 @@ final class RenderTest extends TestCase
 
 	public function testNestedViews(): void
 	{
-		$renderer = \Doe\Render::createNestedView(__DIR__ . '/views/')
+		\Doe\Render::$basePath = __DIR__ . '/views/';
+		$renderer = \Doe\Render::createNestedView()
 			->add('layout.php', ['title' => 'title']);
 		$this->assertSame(
 			$renderer->render(), 
@@ -35,7 +37,8 @@ final class RenderTest extends TestCase
 
 	public function testOverrideArguments(): void
 	{
-		$renderer = \Doe\Render::createNestedView(__DIR__ . '/views/')
+		\Doe\Render::$basePath = __DIR__ . '/views/';
+		$renderer = \Doe\Render::createNestedView()
 			->add('layout.php', ['title' => 'title'])
 			->add('test1.php', ['data' => 'stuff'], ['title' => 'overridetitle']);
 		$this->assertSame(
