@@ -1,0 +1,1 @@
+<title><?= $title ?></title><main><?= $content ?></main>
