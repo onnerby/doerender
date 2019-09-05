@@ -12,7 +12,7 @@ final class RenderTest extends TestCase
 	public function testCreateRenderer(): void
 	{
 		\Doe\Render::$basePath = __DIR__ . '/views/';
-		$renderer = \Doe\Render::createNestedView();
+		$renderer = \Doe\Render::nestedView();
 		$this->assertIsObject(
 			$renderer
 		);
@@ -21,7 +21,7 @@ final class RenderTest extends TestCase
 	public function testNestedViews(): void
 	{
 		\Doe\Render::$basePath = __DIR__ . '/views/';
-		$renderer = \Doe\Render::createNestedView()
+		$renderer = \Doe\Render::nestedView()
 			->add('layout.php', ['title' => 'title']);
 		$this->assertSame(
 			$renderer->render(), 
@@ -38,7 +38,7 @@ final class RenderTest extends TestCase
 	public function testOverrideArguments(): void
 	{
 		\Doe\Render::$basePath = __DIR__ . '/views/';
-		$renderer = \Doe\Render::createNestedView()
+		$renderer = \Doe\Render::nestedView()
 			->add('layout.php', ['title' => 'title'])
 			->add('test1.php', ['data' => 'stuff'], ['title' => 'overridetitle']);
 		$this->assertSame(

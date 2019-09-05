@@ -11,7 +11,7 @@ composer require onnerby/doerender
 ### Basic example
 ```php
 \Doe\Render::$basePath = __DIR__ . '/views/';
-$renderer = \Doe\Render::createNestedView()
+$renderer = \Doe\Render::nestedView()
 	->add('layout.php', ['title' => 'Default title']);
 
 $renderer->add('embed_view.php', ['viewdata' => 'Stuff']);
@@ -49,7 +49,7 @@ will produce
 ### Advanced example
 ```php
 \Doe\Render::$basePath = __DIR__ . '/views/';
-$renderer = \Doe\Render::createNestedView()
+$renderer = \Doe\Render::nestedView()
 	->add('layout.php', ['title' => 'Default title']);
 
 // If you can't access the renderer, we have a helper

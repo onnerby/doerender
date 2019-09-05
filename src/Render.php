@@ -9,18 +9,6 @@ namespace Doe
 		public static $basePath = '';
 
 		/**
-		 * Create a nested view
-		 *
-		 * @param string $basePath Base view path
-		 * @param string $name Nested view name "default"
-		 * @return \Doe\Renderer\NestedView
-		 */
-		public static function createNestedView(string $name = 'default') : Renderer\NestedView
-		{
-			return static::$nestedViews[$name] = new Renderer\NestedView();
-		}
-
-		/**
 		 * Get nested view
 		 *
 		 * @param string $name Nested view name "default"
@@ -28,7 +16,8 @@ namespace Doe
 		 */
 		public static function nestedView(string $name = 'default') : Renderer\NestedView
 		{
-			return static::$nestedViews[$name];
+			static $nestedViews = [];
+			return static::$nestedViews[$name] ?? (static::$nestedViews[$name] = new Renderer\NestedView());
 		}
 
 		/**
