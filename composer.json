@@ -8,7 +8,7 @@
   ],
   "homepage": "https://github.com/onnerby/doerender",
   "type": "library",
-  "license": "LGPL-2.1-or-later",
+  "license": "MIT",
   "authors": [
     {
       "name": "Daniel Önnerby"
